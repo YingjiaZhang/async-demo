@@ -13,6 +13,9 @@ public class FutureClass {
 
   @future
   public static void methodFuture(Set<Id> idsSet) {
+    if (idsSet.isEmpty()) {
+      throw new CommonException('The opportunity ids are empty');
+    }
     String sql = 'SELECT Id,Name FROM Opportunity where Id in :idsSet';
     List<Opportunity> opps = Database.query(sql);
     List<Opportunity> newOppList = new List<Opportunity>();

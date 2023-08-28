@@ -64,3 +64,42 @@ AsyncApexJob jobInfo
     = [SELECT Status,NumberOfErrors FROM AsyncApexJob WHERE Id=:jobID];
 system.debug('-----Async Queueable Job : '+jobInfo);
 ```
+
+```
+ID jobID = System.enqueueJob(new FirstQueuableJob());
+```
+
+### Batch
+
+```
+BatchableClass batchInstance = new BatchableClass ();
+
+// calling with a batch size 50
+Database.executeBatch(batchInstance, 50);
+
+// calling with a batch size 2000
+Database.executeBatch(batchInstance, 2000);
+
+// calling with default batch size 200
+Database.executeBatch(batchInstance) ;
+```
+
+```
+List<Account> accounts = new List<Account>();
+    // insert 100 accounts
+    for (Integer i = 0; i < 100; i++) {
+      accounts.add(
+        new Account(
+          name = 'Account ' + i,
+          billingcity = 'New York',
+          billingcountry = 'American Samoa'
+        )
+      );
+    }
+insert accounts;
+
+Database.executeBatch(new BatchableClass(), 10);
+
+Database.executeBatch(new BatchableStatefulClass(), 10);
+
+```

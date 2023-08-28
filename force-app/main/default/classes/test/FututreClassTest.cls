@@ -66,4 +66,19 @@ public class FututreClassTest {
       }
     }
   }
+
+  @isTest
+  static void should_test_insertUserWithRole_success() {
+    Test.startTest();
+    FutureClass.insertUserWithRole(
+      'username11@test.com',
+      'Yingjia',
+      'email@test.com',
+      'Zhang'
+    );
+    Test.stopTest();
+
+    User[] users = [SELECT Id FROM User WHERE username = 'username11@test.com'];
+    System.assertEquals(1, users.size());
+  }
 }

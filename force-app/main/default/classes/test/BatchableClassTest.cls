@@ -15,6 +15,7 @@ private class BatchableClassTest {
     }
     insert accounts;
   }
+
   @isTest
   static void should_test_account_batchable_updates_success() {
     System.assertEquals(

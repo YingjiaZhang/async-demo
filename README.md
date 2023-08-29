@@ -1,25 +1,14 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Async Jobs
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Reference
 
-## How Do You Plan to Deploy Your Changes?
+- Trailhead Async Module : https://trailhead.salesforce.com/content/learn/modules/asynchronous_apex
+- Asynchronous Apex : https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_async_overview.htm
+- Asynchronous Apex: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_async_overview.htm
+- CronExpression : https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_scheduler.htm
+- Invoking Callouts Using Apex:https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_callouts.htm
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
-
-## Async Jobs
-
-### Future Method
+## Future Method
 
 FutureClass.methodFuture
 
@@ -46,7 +35,7 @@ FutureMixedDMLClass.mixedDMLMethod
 FutureMixedDMLClass.mixedDMLMethod()
 ```
 
-### Queueable
+## Queueable
 
 ```
 ID jobID = System.enqueueJob(new QueueableClass());
@@ -69,7 +58,7 @@ system.debug('-----Async Queueable Job : '+jobInfo);
 ID jobID = System.enqueueJob(new FirstQueuableJob());
 ```
 
-### Batch
+## Batchable
 
 ```
 BatchableClass batchInstance = new BatchableClass ();

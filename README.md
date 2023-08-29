@@ -103,3 +103,12 @@ Database.executeBatch(new BatchableClass(), 10);
 Database.executeBatch(new BatchableStatefulClass(), 10);
 
 ```
+
+## Scheduleable
+
+```
+ String jobId = SchdeuleJobInterval1Min.scheduleJob();
+
+ select Id,CreatedDate,Status,  MethodName,ParentJobId, ApexClass.Name from AsyncApexJob  where ApexClass.Name = 'SchdeuleJobInterval1Min' order by CreatedDate desc  limit 100
+
+```

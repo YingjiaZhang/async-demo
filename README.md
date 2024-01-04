@@ -2,11 +2,13 @@
 
 ## Reference
 
+- Quick Start: Salesforce DX : https://trailhead.salesforce.com/content/learn/projects/quick-start-salesforce-dx?trailmix_creator_id=shoreline&trailmix_slug=preparing-for-sfdx-vs-code-and-cli
 - Trailhead Async Module : https://trailhead.salesforce.com/content/learn/modules/asynchronous_apex
 - Asynchronous Apex : https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_async_overview.htm
 - Asynchronous Apex: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_async_overview.htm
 - CronExpression : https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_scheduler.htm
 - Invoking Callouts Using Apex:https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_callouts.htm
+- Firing Platform Events from Batch Apex : https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_batch_platformevents.htm
 
 ## Future Method
 
@@ -90,6 +92,8 @@ insert accounts;
 Database.executeBatch(new BatchableClass(), 10);
 
 Database.executeBatch(new BatchableStatefulClass(), 10);
+
+Database.executeBatch(new BatchableRaisesPlatformEventsClass(), 10);
 
 ```
 

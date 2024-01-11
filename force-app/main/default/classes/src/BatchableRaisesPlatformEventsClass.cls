@@ -8,20 +8,20 @@ public class BatchableRaisesPlatformEventsClass implements Database.Batchable<SO
     );
   }
 
-  public void execute(Database.BatchableContext BC, List<Account> scope) {
+  public void execute(Database.BatchableContext bc, List<Account> records) {
     System.debug('execute begin : ' + batchProcessed);
     batchProcessed++;
     if (batchProcessed == 3) {
       throw new CommonException('This is a test exception');
     }
-    for (Account acc : scope) {
+    for (Account acc : records) {
       acc.BillingCountry = 'USA';
     }
-    update scope;
+    update records;
     System.debug('execute end : ' + batchProcessed);
   }
 
-  public void finish(Database.BatchableContext BC) {
+  public void finish(Database.BatchableContext bc) {
     System.debug('finish : ' + batchProcessed + ' batch processed.');
     System.debug('Batch finished');
   }

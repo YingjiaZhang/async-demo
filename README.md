@@ -95,6 +95,8 @@ Database.executeBatch(new BatchableStatefulClass(), 10);
 
 Database.executeBatch(new BatchableRaisesPlatformEventsClass(), 10);
 
+Database.executeBatch(new BatchableStatefulInvokeServiceClass(), 10);
+
 ```
 
 ## Scheduleable
